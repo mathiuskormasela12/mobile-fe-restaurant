@@ -5,17 +5,19 @@ import {persistReducer} from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // import all reducers
-import counterReducer from './counter.slice';
+import tableAvailbilitiesReducer from './tableAvailbilities.slice';
+import restaurantManagementReducer from './restaurantManagement.slice';
 
 const rootPersistConfig = {
   key: 'root',
   storage: AsyncStorage,
   version: 1,
-  blacklist: ['counterReducer'],
+  blacklist: ['tableAvailbilitiesReducer', 'restaurantManagementReducer'],
 };
 
 const rootReducer = combineReducers({
-  counterReducer,
+  tableAvailbilitiesReducer,
+  restaurantManagementReducer,
 });
 
 export default persistReducer(rootPersistConfig, rootReducer);
