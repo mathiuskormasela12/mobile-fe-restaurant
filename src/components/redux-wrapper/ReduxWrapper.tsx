@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 
 // import store
-import {store, persistor} from '../redux/store';
+import {store, persistor} from '../../redux/store';
 
 export const ReduxWrapper: React.FC<PropsWithChildren> = props => {
   return (

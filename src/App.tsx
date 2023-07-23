@@ -5,7 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 // import all screens
-import TableAvailability from './screens/TableAvailability';
+import {TableAvailability, RestaurantManagement, Reservation} from './screens';
 
 // import all components
 import {ReduxWrapper} from './components';
@@ -20,6 +20,16 @@ const App: React.FC = () => {
           <Stack.Screen
             name="TableAvailability"
             component={TableAvailability}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="RestaurantManagement"
+            component={RestaurantManagement}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Reservation"
+            component={Reservation}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
