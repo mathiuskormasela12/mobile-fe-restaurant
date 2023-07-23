@@ -6,3 +6,4 @@ export * from './container.types';
 export * from './button.types';
 export * from './navigation.types';
 export * from './shadowGeneratorFunc.types';
+export * from './loading.types';
