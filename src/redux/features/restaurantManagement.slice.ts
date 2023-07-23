@@ -10,6 +10,7 @@ import {
 } from '../../types';
 import Services from '../../services/Services';
 import {IRestaurantManagementSliceStates} from '../../types/restaurantManagement.slice.types';
+import {fetchTableAvailabilities} from './tableAvailbilities.slice';
 
 const initialState: IRestaurantManagementSliceStates = {
   data: [
@@ -38,9 +39,11 @@ export const fetchRestaurantManagement = createAsyncThunk(
 
 export const deleteReservation = createAsyncThunk(
   'restaurantManagement/deleteReservation',
-  async (reservationId: string, {rejectWithValue}) => {
+  async (reservationId: string, {rejectWithValue, dispatch}) => {
     try {
       const {data} = await Services.deleteReservation(reservationId);
+      dispatch(fetchRestaurantManagement());
+      dispatch(fetchTableAvailabilities());
       return data;
     } catch (err) {
       const error = err as AxiosError;

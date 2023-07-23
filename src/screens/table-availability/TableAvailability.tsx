@@ -51,6 +51,7 @@ export const TableAvailability: React.FC = () => {
                         item.isAvailable ? 'Available' : 'Unavailable'
                       }
                       variant={item.isAvailable ? 'primary' : 'danger'}
+                      onPress={() => handleNavigate('Reservation', item.id)}
                     />
                   </View>
                 )}

@@ -10,7 +10,6 @@ import {generateSize} from '../../helpers';
 
 const style = StyleSheet.create({
   btn: {
-    backgroundColor: Colors.primary,
     width: '100%',
     height: generateSize(8.2, 'height'),
     borderRadius: generateSize(2.2, 'width'),
@@ -21,6 +20,12 @@ const style = StyleSheet.create({
     fontSize: generateSize(4.6, 'width'),
     color: Colors.white,
     fontFamily: Fonts.bold,
+  },
+  primary: {
+    backgroundColor: Colors.primary,
+  },
+  danger: {
+    backgroundColor: Colors.danger,
   },
 });
 

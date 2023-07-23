@@ -10,10 +10,16 @@ import {IButtonProps} from '../../types';
 import style from './style';
 
 export const Button: React.FC<IButtonProps> = props => {
-  const {children, ...rest} = props;
+  const {children, marginTop = undefined, variant = 'primary', ...rest} = props;
 
   return (
-    <TouchableOpacity style={style.btn} {...rest}>
+    <TouchableOpacity
+      style={[
+        style.btn,
+        style[variant],
+        marginTop !== undefined && {marginTop},
+      ]}
+      {...rest}>
       <Text style={style.text}>{children}</Text>
     </TouchableOpacity>
   );

@@ -25,8 +25,12 @@ export const useTableAvailability = () => {
     (states: RootState) => states.tableAvailbilitiesReducer.error,
   );
 
-  const handleNavigate = (screen: ScreenName): void => {
-    navigation.navigate(screen);
+  const handleNavigate = (screen: ScreenName, tableId?: string): void => {
+    if (tableId?.length) {
+      navigation.navigate(screen, {tableId: tableId ?? ''});
+    } else {
+      navigation.navigate(screen);
+    }
   };
 
   useEffect(() => {

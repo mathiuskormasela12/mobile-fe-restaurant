@@ -3,4 +3,7 @@
 // import all types
 import {ScreenNames} from '../../../types';
 
-export type RootStackParamList = Record<ScreenNames[number], undefined>;
+export type RootStackParamList = Record<
+  ScreenNames[number],
+  undefined | {tableId?: string}
+>;

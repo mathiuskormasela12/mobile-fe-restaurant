@@ -9,4 +9,5 @@ export interface ICardProps {
   badgeTitle?: string;
   badgeOnpress?: () => void;
   variant: 'primary' | 'danger';
+  onPress?: () => void;
 }

@@ -9,3 +9,4 @@ export * from './badge/Badge';
 export * from './empty-state/EmptyState';
 export * from './loading/Loading';
 export * from './error-state/ErrorState';
+export * from './input/Input';

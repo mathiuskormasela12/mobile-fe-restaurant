@@ -14,7 +14,10 @@ import {Badge} from '../badge/Badge';
 
 export const Card: React.FC<ICardProps> = props => {
   return (
-    <TouchableOpacity style={style.card} disabled={props.disabled}>
+    <TouchableOpacity
+      style={style.card}
+      disabled={props.disabled}
+      onPress={props.onPress}>
       <View style={style.header}>
         <Text style={style.title}>{props.title}</Text>
         <Text style={style.subtitle}>{props.subtitle}</Text>
