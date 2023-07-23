@@ -1,3 +1,8 @@
 // ========= Components
 // export all components
-export * from './ReduxWrapper';
+export * from './redux-wrapper/ReduxWrapper';
+export * from './container/Container';
+export * from './title/Title';
+export * from './button/Button';
+export * from './card/Card';
+export * from './badge/Badge';
