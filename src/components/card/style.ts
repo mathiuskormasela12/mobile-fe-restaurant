@@ -27,16 +27,22 @@ const style = StyleSheet.create({
     paddingHorizontal: generateSize(3.5, 'width'),
     borderRadius: generateSize(1.6, 'width'),
   },
-  tableCode: {
+  title: {
     fontFamily: Fonts.base,
     fontSize: generateSize(4, 'width'),
     marginBottom: generateSize(0.7, 'height'),
     color: Colors.dark,
   },
-  location: {
+  subtitle: {
     fontFamily: Fonts.base,
     fontSize: generateSize(3.5, 'width'),
     color: Colors.dark,
+  },
+  secondaryText: {
+    fontFamily: Fonts.base,
+    fontSize: generateSize(3.5, 'width'),
+    color: Colors.dark,
+    marginTop: generateSize(0.5, 'height'),
   },
   header: {
     flex: 3,

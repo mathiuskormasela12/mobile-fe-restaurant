@@ -7,3 +7,4 @@ export * from './button.types';
 export * from './navigation.types';
 export * from './shadowGeneratorFunc.types';
 export * from './tableAvailbilities.slice.types';
+export * from './restaurantManagement.slice.types';

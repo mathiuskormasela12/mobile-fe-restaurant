@@ -13,7 +13,7 @@ export const EmptyState: React.FC = () => {
   return (
     <View style={style.container}>
       <Image source={emptyStateImg} style={style.img} />
-      <Text style={style.text}>No Tables Found</Text>
+      <Text style={style.text}>No Data Found</Text>
     </View>
   );
 };

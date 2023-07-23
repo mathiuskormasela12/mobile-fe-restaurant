@@ -44,9 +44,13 @@ export const TableAvailability: React.FC = () => {
                 renderItem={({item}) => (
                   <View style={style.cardContainer}>
                     <Card
-                      tableCode={item.tableCode}
-                      location={item.location}
-                      isAvailable={item.isAvailable}
+                      disabled={!item.isAvailable}
+                      title={item.tableCode}
+                      subtitle={item.location}
+                      badgeTitle={
+                        item.isAvailable ? 'Available' : 'Unavailable'
+                      }
+                      variant={item.isAvailable ? 'primary' : 'danger'}
                     />
                   </View>
                 )}
