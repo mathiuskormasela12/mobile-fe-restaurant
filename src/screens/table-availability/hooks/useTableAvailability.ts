@@ -1,28 +1,42 @@
 // ========= Table Availability Hooks
 // import all packages
-import {useEffect, useRef} from 'react';
+import {useEffect} from 'react';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {useDispatch, useSelector} from 'react-redux';
+import {AppDispatch, RootState} from '../../../redux/store';
 
 // import all types
-import {ILoadingRef, ScreenName} from '../../../types';
+import {ScreenName} from '../../../types';
 import {RootStackParamList} from './types';
 
+// import redux actions
+import {fetchTableAvailabilities} from '../../../redux/features/tableAvailbilities.slice';
+
 export const useTableAvailability = () => {
+  const dispatch = useDispatch<AppDispatch>();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-  const loadingRef = useRef<ILoadingRef>();
+  const loading: boolean = useSelector(
+    (state: RootState) => state.tableAvailbilitiesReducer.loading,
+  );
+  const tableAvailbilities = useSelector(
+    (states: RootState) => states.tableAvailbilitiesReducer.data,
+  );
+  const error = useSelector(
+    (states: RootState) => states.tableAvailbilitiesReducer.error,
+  );
 
   const handleNavigate = (screen: ScreenName): void => {
     navigation.navigate(screen);
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      loadingRef.current?.handleLoading(false);
-    }, 10000);
-  }, []);
+    dispatch(fetchTableAvailabilities());
+  }, [dispatch]);
 
   return {
     handleNavigate,
-    loadingRef,
+    loading,
+    tableAvailbilities,
+    error,
   };
 };
